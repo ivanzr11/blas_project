@@ -1,0 +1,19 @@
+name: BLAS C-Project CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Compile C program
+      run: gcc -std=c99 blas.c test_blas.c -o test_runner
+
+    - name: Run compiled tests
+      run: ./test_runner
