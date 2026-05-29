@@ -12,7 +12,7 @@ void test_interface() {
     
     c_axpy(n, a, x, y);
 
-    assert(y[0] == 6.0);
+    assert(y[0] == 999.0);
     assert(y[1] == 9.0);
     assert(y[2] == 12.0);
     
